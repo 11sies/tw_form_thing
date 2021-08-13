@@ -1,0 +1,30 @@
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  color: white;
+}
+
+.sarp {
+  font-family: Sarpanch, sans-serif;
+}
+
+.setwidth {
+  width: min(800px, 100%);
+}
+
+/* @apply does not work on Codepen, but these are the classes I would define if I could */
+
+.item {
+  @apply flex flex-col p-6;
+}
+
+.user-interface {
+  @apply border-solid border-2 border-gray-500 rounded-md p-2 text-sm;
+}
+
+.check-radio {
+  @apply h-5 w-5;
+}
+
+.check-radio-text {
+  @apply pl-7 text-base;
+}

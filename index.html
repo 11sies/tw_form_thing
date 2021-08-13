@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>tailwind_form_thing</title>
+  <link rel='stylesheet' href='https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css'><link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sarpanch|Noto+Sans+JP">
+</head>
+
+<!--
+  @TODO:
+    - set the width of main using Tailwind componenets to eliminate the need for .setwidth
+-->
+
+<body class="bg-gray-900 flex flex-col m-2">
+  <!--    flex flex-col items-center -->
+  <header>
+    <h1 class="text-5xl text-center uppercase font-bold p-8 sarp">Form Thing</h1>
+  </header>
+
+  <main class="bg-gray-800 self-center setwidth">
+    <!--     max-w-screen-lg -->
+    <p class="text-center pt-8">To be honest, this form doesn't actually do anything. It's just for practice.</p>
+    <form class="flex flex-col text-xl">
+      <div class="flex flex-col p-6">
+        <!-- .item -->
+        <label class="pb-4" for="name" id="name-label">Name</label>
+        <input class="border-solid border-2 border-gray-500 rounded-md p-2 text-sm" type="text" placeholder="Name" id="name" name="name" required> <!-- .user-interface -->
+      </div>
+      <div class="flex flex-col p-6">
+        <!-- .item -->
+        <label class="pb-4" for="email" id="email-label">Email</label>
+        <input class="border-solid border-2 border-gray-500 rounded-md p-2 text-sm" type="email" placeholder="Email" id="email" name="email" required> <!-- .user-interface -->
+      </div>
+      <div class="flex flex-col p-6">
+        <!-- .item -->
+        <label class="pb-4" for="age" id="number-label">Age</label>
+        <input class="border-solid border-2 border-gray-500 rounded-md p-2 text-sm" id="number" type="number" min="18" max="111" placeholder="Age (optional)" name="age" value="age"> <!-- .user-interface -->
+      </div>
+      <div class="flex flex-col p-6">
+        <!-- .item -->
+        <label class="pb-4" for="situation">Current life situation</label>
+        <select class="border-solid border-2 border-gray-500 rounded-md p-2 text-sm" name="situation" id="situation">
+          <!-- .user-interface -->
+          <option value="select">--Select an option--</option>
+          <option value="best">Living my best life</option>
+          <option value="grind">Struggling under the grind</option>
+          <option value="hussle">Side husslin'</option>
+          <option value="debt">Student accumulating debt</option>
+          <option value="training">In training for future daily grind</option>
+          <option value="moderate-unemployed">Moderately unemployed</option>
+          <option value="very-unemployed">Very unemployed</option>
+        </select>
+      </div>
+      <div class="flex flex-col p-6">
+        <!-- .item -->
+        <label class="pb-4" for="recommend">Would you recommend this survey form to a friend?</label>
+        <label class="p-2" for="prob"><input class="h-5 w-5" type="radio" name="recommend" value="prob" id="prob"><span class="pl-7 text-base">Prob</span></label> <!-- .check-radio -->
+        <label class="p-2" for="def"><input class="h-5 w-5" type="radio" name="recommend" value="def" id="def"><span class="pl-7 text-base">Def</span></label> <!-- .check-radio -->
+        <label class="p-2" for="nop"><input class="h-5 w-5" type="radio" name="recommend" value="nop" id="nop"><span class="pl-7 text-base">Nop</span></label> <!-- .check-radio -->
+      </div>
+      <div class="flex flex-col p-6">
+        <!-- .item -->
+        <label class="pb-4" for="features">What is your favorite feature of this form?</label>
+        <select class="border-solid border-2 border-gray-500 rounded-md p-2 text-sm" name="features" id="features">
+          <option value="select">--Select an option--</option>
+          <option value="text">Text input</option>
+          <option value="radio">Radio buttons</option>
+          <option value="dropdown">Dropdown menus</option>
+        </select>
+      </div>
+      <div class="flex flex-col p-6">
+        <!-- .item -->
+        <label class="pb-4" for="features">What additional features would you like to see?</label>
+        <label class="p-2" for="hamburger"><input class="h-5 w-5" type="checkbox" name="features" value="hamburger" id="hamburger" /><span class="pl-7 text-base">Unnecessary hamburger menus</span></label> <!-- .check-radio -->
+        <label class="p-2" for="wasted"><input class="h-5 w-5" type="checkbox" name="features" value="wasted" id="wasted" /><span class="pl-7 text-base">Wasted space</span></label> <!-- .check-radio -->
+        <label class="p-2" for="redundant-1"><input class="h-5 w-5" type="checkbox" name="features" value="redundant-1" id="redundant-1" /><span class="pl-7 text-base">Redundancy</span></label> <!-- .check-radio -->
+        <label class="p-2" for="drop"><input class="h-5 w-5" type="checkbox" name="features" value="drop" id="drop" /><span class="pl-7 text-base">Dropdown menus with only one item</span></label> <!-- .check-radio -->
+        <label class="p-2" for="intentionally-incorrect"><input class="h-5 w-5" type="checkbox" name="features" value="unclickable" id="unclickable" /><span class="pl-7 text-base">Unclickable dropbox text</span></label> <!-- .check-radio -->
+        <label class="p-2" for="density"><input class="h-5 w-5" type="checkbox" name="features" value="density" id="density" /><span class="pl-7 text-base">Absurdly low information density</span></label> <!-- .check-radio -->
+        <label class="p-2" for="redundant-2"><input class="h-5 w-5" type="checkbox" name="features" value="redundant-2" id="redundant-2" /><span class="pl-7 text-base">Redundancy</span></label> <!-- .check-radio -->
+      </div>
+      <div class="flex flex-col p-6">
+        <label class="pb-4" for="mention">Anything else you'd like to mention?</label>
+        <textarea class="border-solid border-2 border-gray-500 rounded-md p-2 text-sm" name="mention" id="mention" placeholder="type type type type"></textarea>
+      </div>
+      <div class="flex flex-col p-6"> <!-- item -->
+        <button class="w-48 self-center bg-green-700 hover:bg-green-600 border-solid border-2 border-gray-500 rounded-md p-2 font-semibold" type="submit" id="submit">Submit</button>
+      </div>
+    </form>
+  </main>
+
+  <footer class="p-11 text-sm text-center">
+    This page was rebuilt using Tailwind. <a class="underline hover:text-red-400" href="https://codepen.io/11sies/full/gOgRyqJ" target="_blank">Find the original here.</a>
+  </footer>
+</body>
+</html>
